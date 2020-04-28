@@ -146,20 +146,30 @@ object DFDEMO {
                              
       dfjsonsamplejson.show()
       dfjsonsamplejson.printSchema()
+
        
       
-/*  //Reading from jdbc: mysql
+ //Reading from jdbc: MySQL
    
    println("reading from MySQL")   
    val DFMySQL =   spark.read.format("jdbc")
   .option("url", "jdbc:mysql://localhost:3306/test")
-  .option("dbtable", "test.subscriber")
+  .option("dbtable", "subscribers")
   .option("user", "ahmed")
   .option("password", "123456")
   .load()
   
   DFMySQL.show()
-  */
+  
+  // Writing to jdbc: MySQL
+  
+  DFMySQL.write.format("jdbc")
+               .option("url", "jdbc:mysql://localhost:3306/test")
+               .option("dbtable", "subscribers3")
+               .option("user", "root")
+               .option("password", "123456")
+               .mode("append")
+               .save()
  
   
     

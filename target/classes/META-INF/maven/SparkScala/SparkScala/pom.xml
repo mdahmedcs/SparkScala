@@ -4,6 +4,11 @@
   <artifactId>SparkScala</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
+ <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.15</version>
+</dependency>
  
   <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
 <dependency>
